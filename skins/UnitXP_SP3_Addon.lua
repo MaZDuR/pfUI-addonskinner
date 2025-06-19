@@ -18,6 +18,8 @@ pfUI.addonskinner:RegisterSkin("UnitXP_SP3_Addon", function()
       xpsp3_button_cameraHeight_lower,
       xpsp3_button_cameraHorizontalDisplacement_leftPlayer,
       xpsp3_button_cameraHorizontalDisplacement_rightPlayer,
+      xpsp3_buttonCancel_resetCamera,
+      xpsp3_buttonCancel_close,
 
     }
 
@@ -28,6 +30,8 @@ pfUI.addonskinner:RegisterSkin("UnitXP_SP3_Addon", function()
       xpsp3_checkButton_prioritizeMarkedNameplate,
       xpsp3_checkButton_notify_flashTaskbarIcon,
       xpsp3_checkButton_notify_playSystemDefaultSound,
+      xpsp3_checkButton_nameplateCombatFilter,
+      xpsp3_checkButton_showInCombatNameplatesNearPlayer,
     }
     
     for _, f in pairs(frames) do
@@ -44,6 +48,13 @@ pfUI.addonskinner:RegisterSkin("UnitXP_SP3_Addon", function()
       SkinCheckbox(box)
     end
   end)
+
+  StripTextures(xpsp3_editBox_FPScap, false, "BACKGROUND")
+  xpsp3_editBox_FPScap:SetHeight(20)
+  xpsp3_editBox_FPScap:SetPoint("TOPLEFT", xpsp3Frame, 320, -35)
+  xpsp3_editBox_FPScap:SetWidth(40)
+  CreateBackdrop(xpsp3_editBox_FPScap)
+
 
   -- remove from pending list when applied
   pfUI.addonskinner:UnregisterSkin("UnitXP_SP3_Addon")
